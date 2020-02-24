@@ -17,7 +17,7 @@
 | Column | Type | Options |
 |:-----------|------------:|:------------:|
 | dody  | text |  |
-| image | text |  |
+| image | string |  |
 | group_id | integer | null: false, foreign_key: true |
 | user_id | integer | null: false, foreign_key: true |
 
@@ -29,8 +29,8 @@
 
 | Column | Type | Options |
 |:-----------|------------:|:------------:|
-| groupname  | text | null: false |
-| user_id | integer | null: false, foreign_key: true |
+| groupname  | string | null: false |
+| user_id | integer | null: false, foreign_key: true, add_index :groups,:user_id |
 
 ### Association
 - has_many :messages
@@ -40,8 +40,8 @@
 
 | Column | Type | Options |
 |:-----------|------------:|:------------:|
-| user_id  | integer| null: false, foreign_key: true  |
-| group_id | integer| null: false, foreign_key: true |
+| user_id  | integer | null: false, foreign_key: true  |
+| group_id | integer | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :group
