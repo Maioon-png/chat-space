@@ -1,24 +1,48 @@
-# README
+# DB設計
+***
+## usersテーブル
+***
+| Column | Type | Options |
+|:-----------|------------:|:------------:|
+| username  | string | null: false |
+| email | string | null: false |
+| password | string | null: false |
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Association
+- has_many :messages
+- has_many :groups, through: :groups_users
 
-Things you may want to cover:
+## messagesテーブル
+***
+| Column | Type | Options |
+|:-----------|------------:|:------------:|
+| dody  | text |  |
+| image | text |  |
+| group_id | integer | null: false, foreign_key: true |
+| user_id | integer | null: false, foreign_key: true |
 
-* Ruby version
+### Association
+- belongs_to :user
+- belongs_to :group
 
-* System dependencies
+## groupsテーブル
+***
+| Column | Type | Options |
+|:-----------|------------:|:------------:|
+| groupname  | text | null: false |
+| user_id | integer | null: false, foreign_key: true |
 
-* Configuration
+### Association
+- has_many :messages
+- has_many :messages, through: :groups_users
 
-* Database creation
+## groups_usersテーブル
+***
+| Column | Type | Options |
+|:-----------|------------:|:------------:|
+| user_id  | integer| null: false, foreign_key: true  |
+| group_id | integer| null: false, foreign_key: true |
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Association
+- belongs_to :group
+- belongs_to :user
