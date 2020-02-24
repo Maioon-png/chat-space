@@ -1,7 +1,7 @@
 # DB設計
-***
+
 ## usersテーブル
-***
+
 | Column | Type | Options |
 |:-----------|------------:|:------------:|
 | username  | string | null: false |
@@ -13,7 +13,7 @@
 - has_many :groups, through: :groups_users
 
 ## messagesテーブル
-***
+
 | Column | Type | Options |
 |:-----------|------------:|:------------:|
 | dody  | text |  |
@@ -26,7 +26,7 @@
 - belongs_to :group
 
 ## groupsテーブル
-***
+
 | Column | Type | Options |
 |:-----------|------------:|:------------:|
 | groupname  | text | null: false |
@@ -37,7 +37,7 @@
 - has_many :messages, through: :groups_users
 
 ## groups_usersテーブル
-***
+
 | Column | Type | Options |
 |:-----------|------------:|:------------:|
 | user_id  | integer| null: false, foreign_key: true  |
