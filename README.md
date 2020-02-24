@@ -5,8 +5,8 @@
 | Column | Type | Options |
 |:-----------|------------:|:------------:|
 | username  | string | null: false |
-| email | string | null: false |
-| password | string | null: false |
+| email | string | null: false, unique: true, index: true |
+| password | string | null: false, unique: true, index: true |
 
 ### Association
 - has_many :messages
@@ -30,7 +30,7 @@
 | Column | Type | Options |
 |:-----------|------------:|:------------:|
 | groupname  | string | null: false |
-| user_id | integer | null: false, foreign_key: true, add_index :groups,:user_id |
+| user_id | integer | null: false, foreign_key: true, index: true |
 
 ### Association
 - has_many :messages
