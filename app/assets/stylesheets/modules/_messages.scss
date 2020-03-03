@@ -49,9 +49,13 @@ body {
         padding: 20px 20px 40px;
         color: $white;
         font-weight: bold;
-        &__group-name {
-          font-size: 15px;
-          margin-bottom: 5px;
+        &__btn {
+          text-decoration: none;
+          color: $white;
+          &__group-name {
+            font-size: 15px;
+            margin-bottom: 5px;
+          }
         }
         &__latest-message {
           font-size: 11px;
