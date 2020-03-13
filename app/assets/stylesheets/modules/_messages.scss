@@ -45,6 +45,7 @@ body {
       height: calc(100vh - 100px);
       width: 300px;
       background-color: #2f3e51;
+      overflow: scroll;
       .group {
         padding: 20px 20px 40px;
         color: $white;
@@ -68,6 +69,10 @@ body {
     width: calc(100% - 300px);
     height: 100%;
     background-color: $white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
     &__group-info {
       @include flexbox;
       height: 100px;
@@ -108,6 +113,7 @@ body {
       height: calc(100vh - 190px);
       background-color: #fafafa;
       padding-top: 35px;
+      overflow: scroll;
       .message {
         padding: 0 0 46px 40px;
         &__info {
@@ -131,8 +137,13 @@ body {
     }
     &__message-form {
       height: 90px;
+      width: calc(100% - 300px);
       background-color: #d2d2d2;
       padding: 20px 40px;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      z-index: 2;
       .new-message {
         &__input-box {
           width: 100%;
