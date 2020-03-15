@@ -16,7 +16,7 @@
     = render @messages
 
   .chat-main__message-form
-    = form_for [@group, @message] do |f|
+    = form_for [@group, @message], html: {class: 'new_form'} do |f|
       .new-message__input-box
         = f.text_field :content, class: 'new-message__input-box__text', placeholder: 'type a message'
         = f.label :image, class: 'new-message__input-box__image' do
