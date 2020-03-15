@@ -69,10 +69,6 @@ body {
     width: calc(100% - 300px);
     height: 100%;
     background-color: $white;
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 1;
     &__group-info {
       @include flexbox;
       height: 100px;
@@ -177,4 +173,7 @@ body {
       }
     }
   }
+}
+form {
+  display: flex;
 }
