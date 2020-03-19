@@ -18,7 +18,7 @@ $(function(){
   function  addMember(name, id) {
     var html = `
             <div class='chat-group-user'>
-              <input name='group[user_ids][]' type='hidden' value='${id}'> 
+              <input name='group[user_ids][]' type='hidden' value='${id}' class='chat-group-user-id' > 
               <p class='chat-group-user__name'>${name}</p>
               <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
             </div>
@@ -28,10 +28,14 @@ $(function(){
 
   $('#user-search-field').on("keyup", function(){
     var input = $('#user-search-field').val();
+    var user_id = [];
+    $('.chat-group-user-id').each(function(){
+      user_id.push($(this).val()); 
+    })
     $.ajax({
       type: 'GET',
       url: '/users',
-      data: { keyword: input },
+      data: { keyword: input, user_id: user_id },
       dataType: 'json',
     })
     .done(function(users){
